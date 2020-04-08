@@ -1,21 +1,109 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Layout from "../components/layout"
+import ModelArea from "../components/modelArea"
+import styled from "styled-components"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+import img from "../images/brush.png"
+
+const IndexPage = () => {
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Wrapper>
+        <div className="block-intro">
+          <div className="content">
+            <p
+              data-sal="slide-left"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >Hi.</p>
+            <h1
+              className="title"
+              data-sal="slide-left"
+              data-sal-duration="1200"
+              data-sal-easing="ease"
+            >
+              I’m Killian Boucher,
+              <br/>
+              A french 3D / VFX conceptor
+            </h1>
+          </div>
+          <div className="presentation">
+            <ModelArea />
+          </div>
+        </div>
+      </Wrapper>
+    </Layout>
+  )
+}
 
 export default IndexPage
+
+const Wrapper = styled.div`
+  margin: 0 auto;
+  padding: 160px 0;
+  max-width: 1150px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  @media screen and (max-width: 1198px) {
+    padding: 160px 24px;
+    max-width: none;
+  }
+
+  .block-intro {
+    margin: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .content {
+    margin: 90px 50px 0 114px;
+    @media screen and (max-width: 940px) {
+      margin: 0 0 0 60px;
+    }
+    @media screen and (max-width: 500px) {
+      margin: 0;
+    }
+
+    .title {
+      font-size: 20px;
+      line-height: 36px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 60px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+  }
+
+  .presentation {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-image: url(${img});
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @media screen and (max-width: 940px) {
+      display: none;
+    }
+    &:before {
+      z-index: -1;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      right: 1px;
+      bottom: 1px;
+      content: '';
+      background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+    }
+  }
+`
