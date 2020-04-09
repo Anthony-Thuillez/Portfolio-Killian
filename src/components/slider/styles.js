@@ -53,19 +53,28 @@ export const SliderItem = styled.div`
     }
     .title {
       margin-bottom: 10px;
-      font-size: 120px;
+      font-size: 100px;
       font-weight: 900;
       text-transform: uppercase;
-      line-height: 120px;
+      line-height: 110px;
       letter-spacing: 20px;
-      @media screen and (max-width: 869px) {
+      @media screen and (max-width: 900px) {
         font-size: 80px;
-        line-height: 80px;
+        line-height: 90px;
         letter-spacing: 15px;
       }
-      @media screen and (max-width: 569px) {
+      @media screen and (max-width: 730px) {
         font-size: 40px;
-        line-height: 40px;
+        line-height: 50px;
+        letter-spacing: 10px;
+      }
+      @media screen and (max-width: 530px) {
+        font-size: 34px;
+        line-height: 44px;
+      }
+      @media screen and (max-width: 400px) {
+        font-size: 20px;
+        line-height: 28px;
       }
     }
     .subtitle {
@@ -74,19 +83,27 @@ export const SliderItem = styled.div`
       text-transform: uppercase;
       line-height: 42px;
       letter-spacing: 25px;
-      @media screen and (max-width: 869px) {
+      @media screen and (max-width: 900px) {
         letter-spacing: 18px;
         line-height: 36px
       }
-      @media screen and (max-width: 569px) {
+      @media screen and (max-width: 730px) {
         letter-spacing: 10px;
         font-size: 14px;
         line-height: 28px;
       }
+      @media screen and (max-width: 530px) {
+        font-size: 12px;
+        line-height: 24px;
+      }
+      @media screen and (max-width: 530px) {
+        font-size: 12px;
+        letter-spacing: 5px;
+      }
     }
     .info-scroll {
       position: absolute;
-      bottom: 40px;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
       font-size: 12px;
@@ -159,6 +176,10 @@ export const SlideContent = styled.div`
           width: 300px;
           height: 150px;
         }
+        @media screen and (max-width: 360px) {
+          width: 270px;
+          height: 150px;
+        }
       }
     }
   }
@@ -225,6 +246,9 @@ export const Control = styled.div`
   font-family: 500;
   user-select: none;
   cursor: pointer;
+  @media screen and (max-width: 530px) {
+    font-size: 16px;
+  }
 
   span {
     padding-top: 3px;
