@@ -96,8 +96,6 @@ const Slider = () => {
     ]
   })
 
-  console.log(data)
-
   return (
     <SliderContainer className={"slider-instance"} height={"100vh"}>
       <SliderWrapper
