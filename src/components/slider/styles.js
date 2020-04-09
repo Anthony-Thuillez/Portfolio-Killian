@@ -155,6 +155,10 @@ export const SlideContent = styled.div`
           width: 560px;
           height: 315px;
         }
+        @media screen and (max-width: 600px) {
+          width: 300px;
+          height: 150px;
+        }
       }
     }
   }
