@@ -27,7 +27,7 @@ export default function Project3({images}) {
                     Play with the fusion masks to have consistency between each image
                 </p>
             </div>
-            <div className="image-content">
+            <div className="image-content small">
                 {images.map(image => (
                     <div
                         key={image.id}

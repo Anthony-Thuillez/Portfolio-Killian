@@ -198,6 +198,11 @@ export const SlideContent = styled.div`
     @media screen and (max-width: 600px) {
       margin: 60px 0;
     }
+    &.small {
+      .image {
+        max-width: 350px;
+      }
+    }
     .image {
       margin: 0 auto 80px;
       max-width: 600px;
