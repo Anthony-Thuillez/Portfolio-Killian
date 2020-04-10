@@ -1,10 +1,11 @@
 import React, { useState } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import SelectLanguage from './selectLanguage'
 import styled from "styled-components"
 import Logo from "../images/logo_white.png"
 
-export default function Header() {
-  
+export default function Header(props) {
+
   const [isToggled, setToggled] = useState(false)
 
   const toggleMenu = () => setToggled(!isToggled)
@@ -12,7 +13,7 @@ export default function Header() {
   return (
     <>
       <MainHeader>
-        <AniLink className="logo" cover to="/" duration={0.9} direction="left" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
+        <AniLink className="logo" cover to={(props.langs[1].selected ? '/fr/' : '/')} duration={0.9} direction="left" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
           <img src={ Logo } alt="logo" />
         </AniLink>
         <div className={"burger-menu" + (isToggled ? ' active' : '')}
@@ -21,18 +22,27 @@ export default function Header() {
           <span></span>
         </div>
       </MainHeader>
+      <SelectLanguage langs={props.langs} />
       <Modal className={"modal-menu" + (isToggled ? ' active' : '')}>
-          <AniLink cover to="/" duration={0.9} direction="left" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
-            Home
+          <AniLink cover to={(props.langs[1].selected ? '/fr/' : '/')} duration={0.9} direction="left" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
+            {
+              (props.langs[1].selected ? 'Accueil' : 'Home')
+            }
           </AniLink>
-          <AniLink cover to="/projects/" duration={0.9} direction="right" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
-            Projects
+          <AniLink cover to={(props.langs[1].selected ? '/fr/projects/' : '/projects/')} duration={0.9} direction="right" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
+            {
+              (props.langs[1].selected ? 'Projets' : 'Projects')
+            }
           </AniLink>
-          <AniLink cover to="/gallery/" duration={0.9} direction="right" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
-            Gallery
+          <AniLink cover to={(props.langs[1].selected ? '/fr/gallery/' : '/gallery/')} duration={0.9} direction="right" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
+            {
+              (props.langs[1].selected ? 'Gallerie' : 'Gallery')
+            }
           </AniLink>
-          <AniLink cover to="/about/" duration={0.9} direction="right" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
-            About
+          <AniLink cover to={(props.langs[1].selected ? '/fr/about/' : '/about/')} duration={0.9} direction="right" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
+            {
+              (props.langs[1].selected ? 'À propos' : 'About')
+            }
           </AniLink>
       </Modal>
     </>

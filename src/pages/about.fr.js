@@ -1,20 +1,20 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/layout-fr"
 import SEO from "../components/seo"
 import styled from "styled-components"
 
-const AboutPage = () => {
+const AboutPage = (props) => {
   
   return (
-    <Layout>
-        <SEO title="About" />
+    <Layout location={props.location}>
+        <SEO title="A propos" />
         <Wrapper>
           <Title
             data-sal="slide-left"
             data-sal-duration="400"
             data-sal-easing="ease"
           >
-            About <span>me</span>
+            À propos <span>de moi</span>
           </Title>
           <p
             className="text"
@@ -22,7 +22,7 @@ const AboutPage = () => {
             data-sal-duration="800"
             data-sal-easing="ease"
           >
-            Based in the beautiful city of Paris, I'am currently exploring the beauties of 3D, I studied 2 years at <a href="https://www.esra.edu/formations/cinema-television/esra-bac-3-ecole-de-cinema/?utm_source=google_cpc&utm_campaign=search_esra_marque&gclid=CjwKCAjwpqv0BRABEiwA-TySwW9cWYVYHKB6Ylv86ep1j9CMjp2O5HpnhdzQ1cuDzZL3ABOehZyfehoC-isQAvD_BwE" target="_blank" rel="noopener noreferrer">Esra 3D</a>, currently studing 1 year at <a href="http://www.vfx-workshop.com/?gclid=CjwKCAjwpqv0BRABEiwA-TySwRo_80HJj5HWFjiNtKxgZFERuvQFbL-TpcRZLYhZXwo4_gLSGHvVdxoC8EcQAvD_BwE" target="_blank" rel="noopener noreferrer">VFX Workshop</a>.
+            Basé dans la belle ville de Paris, j’explore actuellement les beautés de la 3D. J’ai étudié 2 ans à <a href="https://www.esra.edu/formations/cinema-television/esra-bac-3-ecole-de-cinema/?utm_source=google_cpc&utm_campaign=search_esra_marque&gclid=CjwKCAjwpqv0BRABEiwA-TySwW9cWYVYHKB6Ylv86ep1j9CMjp2O5HpnhdzQ1cuDzZL3ABOehZyfehoC-isQAvD_BwE" target="_blank" rel="noopener noreferrer">l'Esra 3D</a> de Paris et j’étudie actuellement depuis 1 an à l’école <a href="http://www.vfx-workshop.com/?gclid=CjwKCAjwpqv0BRABEiwA-TySwRo_80HJj5HWFjiNtKxgZFERuvQFbL-TpcRZLYhZXwo4_gLSGHvVdxoC8EcQAvD_BwE" target="_blank" rel="noopener noreferrer">VFX Workshop</a> de Paris.
           </p>
           <p
             className="text"
@@ -30,17 +30,17 @@ const AboutPage = () => {
             data-sal-duration="1200"
             data-sal-easing="ease"
           >
-            My training allowed me to develop my artistic sense, and to discover a passion for 3D modeling and video editing.
+            Mon entraînement m’a permis de développer mon sens artistique et à découvrir une passion pour le modeling 3D et l’édition vidéo.
           </p>
           <Faq
             data-sal="slide-left"
             data-sal-duration="1400"
             data-sal-easing="ease"
           >
-            <p className="question">- Why should you work with me ?</p>
-            <p className="answer">I already worked in a team on projects, always in a good mood, professional and very attentive to the requests.</p>
-            <p className="question">- Why am I different ?</p>
-            <p className="answer">I love discovering and creating new things, on different new software.</p>
+            <p className="question">- Pourquoi travailler avec moi ?</p>
+            <p className="answer">J’ai déjà travaillé en équipe toujours dans la bonne humeur et professionnellement très attentif et ouvert à toute demande.</p>
+            <p className="question">- Pourquoi suis-je différent ?</p>
+            <p className="answer">J'adore découvrir et créer de nouvelles choses sur différents nouveaux logiciels.</p>
           </Faq>
           <p
             className="text contact"
@@ -52,7 +52,7 @@ const AboutPage = () => {
               href="mailto:killian.bot44@gmail.com" 
               target="_blank"
               rel="noopener noreferrer"
-            >Contact me</a>
+            >Me contacter</a>
           </p>
         </Wrapper>
     </Layout>

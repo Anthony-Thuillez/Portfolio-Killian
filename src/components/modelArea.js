@@ -33,7 +33,7 @@ export default function ModelArea() {
 
         const loader = new GLTFLoader()
         loader.load(
-            'models/velo.gltf',
+            '../models/velo.gltf',
 
             function(gltf) {
                 mesh = gltf.scene

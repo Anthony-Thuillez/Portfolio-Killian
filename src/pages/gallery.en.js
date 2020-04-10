@@ -1,15 +1,15 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import Layout from "../components/layout"
+import Layout from "../components/layout-en"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import MontagneVideo from "../images/Montagne.mp4"
 
-const GalleryPage = () => {
+const GalleryPage = (props) => {
 
     const data = useStaticQuery(graphql`
-        query Images {
+        query ImagesEn {
             image1: file(relativePath: {eq: "gallery/01.png"}) {
                 id
                 childImageSharp {
@@ -228,7 +228,7 @@ const GalleryPage = () => {
     }
 
     return (
-        <Layout>
+        <Layout location={props.location}>
             <SEO title="Gallery" />
             <Wrapper>
                 <div className="column">

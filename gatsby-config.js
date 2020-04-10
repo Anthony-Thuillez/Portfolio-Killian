@@ -1,8 +1,11 @@
+const languages = require('./src/data/languages')
+
 module.exports = {
   siteMetadata: {
     title: `Killian Boucher`,
     description: `Welcome to my personal website. I’m Killian Boucher a 3D / VFX conceptor from Paris`,
     author: `@anthony-thuillez`,
+    languages
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,5 +30,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyForNull: 'any',
+        langKeyDefault: languages.defaultLangKey,
+        useLangKeyLayout: true,
+        prefixDefault: false,
+      }
+    }
   ],
 }

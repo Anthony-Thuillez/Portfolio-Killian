@@ -4,7 +4,7 @@ import Video from "../video"
 
 import CassetteImg from "../../images/cassette.jpg"
 
-export default function Project1({images}) {
+export default function Project1({images, lang}) {
 
     return (
         <>
@@ -14,7 +14,7 @@ export default function Project1({images}) {
                 <span>Tilhon</span>
                 </div>
                 <div>
-                <p>Year :</p>
+                <p>{(lang.pageContext.langKey === 'en' ? 'Year :' : 'Année :')}</p>
                 <span>2019</span>
                 </div>
             </div>
@@ -37,7 +37,13 @@ export default function Project1({images}) {
                 data-sal-delay="50"
                 data-sal-easing="ease-out-cubic"
             >
-                <p>I worked on the visual effects of this clip, several processes have been carried out as tracking, transitions, lights effect, rotoscopy, Pan/Crop, particles, flickers, shakes etc...</p>
+                <p>
+                    {(lang.pageContext.langKey === 'en' ?
+                            'I worked on the visual effects of this clip, several processes have been carried out as tracking, transitions, lights effect, rotoscopy, Pan/Crop, particles, flickers, shakes etc...'
+                        :
+                            'J\'ai travaillé sur les effets visuels de ce clip. Plusieurs procédés ont été utilisés comme le tracking, les transitions, les effets de lumière, la rotoscopie, pan/crop, les particules flickers, et shakes etc...'
+                    )}
+                </p>
             </div>
             <div className="image-content">
                 {images.map(image => (
@@ -60,7 +66,13 @@ export default function Project1({images}) {
                 data-sal-delay="50"
                 data-sal-easing="ease-out-cubic"
             >
-                <p>I also worked on the creation of a cassette in the image of his new song Several stages of construction : Modeling, Texturing, Render, compositing</p>
+                <p>
+                    {(lang.pageContext.langKey === 'en' ?
+                            'I also worked on the creation of a cassette in the image of his new song Several stages of construction : Modeling, Texturing, Render, compositing'
+                        :
+                            'J\'ai aussi travaillé sur la création d’une cassette pour un clip vidéo musical. Plusieurs étapes de constructions : modeling, texturing et compositing.'
+                    )}
+                </p>
             </div>
             <div className="image-content">
                 <div
@@ -80,7 +92,13 @@ export default function Project1({images}) {
                 data-sal-delay="50"
                 data-sal-easing="ease-out-cubic"
             >
-                <p>I thank Illicit Epiphany and Braga Ferreira to have solicited me for the creation of this project !</p>
+                <p>
+                    {(lang.pageContext.langKey === 'en' ?
+                            'I thank Illicit Epiphany and Braga Ferreira to have solicited me for the realisation of this project !'
+                        :
+                            'Je remercie Illicit Epiphany ainsi que Braga Ferreira pour m\'avoir sollicité pour la réalisation de ce projet !'
+                    )}
+                </p>
             </div>
         </>
     )

@@ -1,16 +1,16 @@
 import React from "react"
 import SEO from "../components/seo"
-import Layout from "../components/layout"
+import Layout from "../components/layout-en"
 import ModelArea from "../components/modelArea"
 import styled from "styled-components"
 
 import img from "../images/brush.png"
 
-const IndexPage = () => {
+const IndexPage = (props) => {
 
   return (
-    <Layout>
-      <SEO title="Home" />
+    <Layout location={props.location}>
+      <SEO title="3D / VFX conceptor" />
       <Wrapper>
         <div className="block-intro">
           <div className="content">

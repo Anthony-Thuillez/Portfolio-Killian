@@ -2,16 +2,16 @@ import React from "react"
 import Img from "gatsby-image"
 import SkullVideo from "../../images/skull.mp4"
 
-export default function Project2({images}) {
+export default function Project2({images, lang}) {
     return (
         <>
             <div className="info-content">
                 <div>
                 <p>Client :</p>
-                <span>Personal project</span>
+                <span>{(lang.pageContext.langKey === 'en' ? 'Personal project' : 'Projet personnel')}</span>
                 </div>
                 <div>
-                <p>Year :</p>
+                <p>{(lang.pageContext.langKey === 'en' ? 'Year :' : 'Année :')}</p>
                 <span>2020</span>
                 </div>
             </div>
@@ -36,9 +36,17 @@ export default function Project2({images}) {
                 data-sal-easing="ease-out-cubic"
             >
                 <p>
-                    Goal create a full 3D horror sequence.
+                    {(lang.pageContext.langKey === 'en' ?
+                            'Goal create a full 3D horror sequence.'
+                        :
+                            'But : créer une séquence d’horreur en full 3D'
+                    )}
                     <br />
-                    A small project in 3 days using redshift for rendering
+                    {(lang.pageContext.langKey === 'en' ?
+                            'A small project in 3 days using redshift for rendering'
+                        :
+                            'Un petit projet en 3 jours utilisant le moteur de rendu redshift'
+                    )}
                 </p>
             </div>
             <div className="image-content">

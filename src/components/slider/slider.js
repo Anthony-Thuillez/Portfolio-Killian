@@ -15,7 +15,7 @@ import Project1 from "./project1"
 import Project2 from "./project2"
 import Project3 from "./project3"
 
-const Slider = () => {
+const Slider = ({lang}) => {
 
   const data = useStaticQuery(graphql`
     query Projects {
@@ -90,9 +90,9 @@ const Slider = () => {
   const [state, dispatch] = useReducer(reducer, {
     currentIndex: 0,
     items: [
-      { id: 1, title: "My Life", subtitle: "VFX VIDEO CLIP", background: data.project1.childImageSharp.fluid.src, images: data.mylife.nodes },
-      { id: 2, title: "Skeleton", subtitle: "3D HORROR SEQUENCE", background: data.project2.childImageSharp.fluid.src, images: data.skeleton.nodes },
-      { id: 3, title: "Cover Arts", subtitle: "CONCEPTION ART PRINTS", background: data.project3.childImageSharp.fluid.src, images: data.coverarts.nodes }
+      { id: 1, titleEn: "My Life", subtitleEn: "VFX VIDEO CLIP", titleFr: "My Life", subtitleFr: "VFX CLIP VIDEO", background: data.project1.childImageSharp.fluid.src, images: data.mylife.nodes },
+      { id: 2, titleEn: "Halloween Project", subtitleEn: "3D HORROR SEQUENCE", titleFr: "Projet Halloween", subtitleFr: "SEQUENCE D'HORREUR 3D", background: data.project2.childImageSharp.fluid.src, images: data.skeleton.nodes },
+      { id: 3, titleEn: "Cover Arts", subtitleEn: "CONCEPTION ART PRINTS", titleFr: "Arts de Couverture", subtitleFr: "CONCEPTION D'IMPRESSION D'ART", background: data.project3.childImageSharp.fluid.src, images: data.coverarts.nodes }
     ]
   })
 
@@ -117,6 +117,7 @@ const Slider = () => {
               snap={state.snap}
               width={width}
               active={index === state.currentIndex}
+              lang={lang}
             />
           )
         })}
@@ -182,17 +183,17 @@ function reducer(state, action) {
   }
 }
 
-const Slide = ({ item, width, active }) => {
+const Slide = ({ item, width, active, lang }) => {
 
   let slideID = item.id
   let slideContent
 
   if (slideID === 1) {
-    slideContent = <Project1 images={item.images} />
+    slideContent = <Project1 images={item.images} lang={lang} />
   } else if (slideID === 2) {
-    slideContent = <Project2 images={item.images} />
+    slideContent = <Project2 images={item.images} lang={lang} />
   } else if (slideID === 3) {
-    slideContent = <Project3 images={item.images} />
+    slideContent = <Project3 images={item.images} lang={lang} />
   } else {
     return null
   }
@@ -205,8 +206,12 @@ const Slide = ({ item, width, active }) => {
     >
       <div className="intro">
         <div className="intro-content">
-          <h2 className="title">{item.title}</h2>
-          <p className="subtitle">{item.subtitle}</p>
+          <h2 className="title">
+            {(lang.pageContext.langKey === 'en' ? `${item.titleEn}` : `${item.titleFr}`)}
+          </h2>
+          <p className="subtitle">
+            {(lang.pageContext.langKey === 'en' ? `${item.subtitleEn}` : `${item.subtitleFr}`)}
+          </p>
           <span className="info-scroll">scroll</span>
         </div>
       </div>
