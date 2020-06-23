@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import Layout from "../components/layout-fr"
+import Layout from "../components/layout-en"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import MontagneVideo from "../images/Montagne.mp4"

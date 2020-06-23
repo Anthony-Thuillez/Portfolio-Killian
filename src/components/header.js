@@ -1,11 +1,10 @@
 import React, { useState } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import SelectLanguage from './selectLanguage'
+import SelectLanguage from "./selectLanguage"
 import styled from "styled-components"
 import Logo from "../images/logo_white.png"
 
 export default function Header(props) {
-
   const [isToggled, setToggled] = useState(false)
 
   const toggleMenu = () => setToggled(!isToggled)
@@ -13,37 +12,61 @@ export default function Header(props) {
   return (
     <>
       <MainHeader>
-        <AniLink className="logo" cover to={(props.langs[1].selected ? '/fr/' : '/')} duration={0.9} direction="left" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
-          <img src={ Logo } alt="logo" />
+        <AniLink
+          className="logo"
+          cover
+          to={props.langs[1].selected ? "/fr/" : "/"}
+          duration={0.9}
+          direction="left"
+          bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)"
+        >
+          <img src={Logo} alt="logo" />
         </AniLink>
-        <div className={"burger-menu" + (isToggled ? ' active' : '')}
+        <div
+          className={"burger-menu" + (isToggled ? " active" : "")}
           onClick={toggleMenu}
         >
           <span></span>
         </div>
       </MainHeader>
       <SelectLanguage langs={props.langs} />
-      <Modal className={"modal-menu" + (isToggled ? ' active' : '')}>
-          <AniLink cover to={(props.langs[1].selected ? '/fr/' : '/')} duration={0.9} direction="left" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
-            {
-              (props.langs[1].selected ? 'Accueil' : 'Home')
-            }
-          </AniLink>
-          <AniLink cover to={(props.langs[1].selected ? '/fr/projects/' : '/projects/')} duration={0.9} direction="right" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
-            {
-              (props.langs[1].selected ? 'Projets' : 'Projects')
-            }
-          </AniLink>
-          <AniLink cover to={(props.langs[1].selected ? '/fr/gallery/' : '/gallery/')} duration={0.9} direction="right" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
-            {
-              (props.langs[1].selected ? 'Gallerie' : 'Gallery')
-            }
-          </AniLink>
-          <AniLink cover to={(props.langs[1].selected ? '/fr/about/' : '/about/')} duration={0.9} direction="right" bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)">
-            {
-              (props.langs[1].selected ? 'À propos' : 'About')
-            }
-          </AniLink>
+      <Modal className={"modal-menu" + (isToggled ? " active" : "")}>
+        <AniLink
+          cover
+          to={props.langs[1].selected ? "/fr/" : "/"}
+          duration={0.9}
+          direction="left"
+          bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)"
+        >
+          {props.langs[1].selected ? "Accueil" : "Home"}
+        </AniLink>
+        <AniLink
+          cover
+          to={props.langs[1].selected ? "/fr/projects/" : "/projects/"}
+          duration={0.9}
+          direction="right"
+          bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)"
+        >
+          {props.langs[1].selected ? "Projets" : "Projects"}
+        </AniLink>
+        <AniLink
+          cover
+          to={props.langs[1].selected ? "/fr/gallery/" : "/gallery/"}
+          duration={0.9}
+          direction="right"
+          bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)"
+        >
+          {props.langs[1].selected ? "Gallerie" : "Gallery"}
+        </AniLink>
+        <AniLink
+          cover
+          to={props.langs[1].selected ? "/fr/about/" : "/about/"}
+          duration={0.9}
+          direction="right"
+          bg="linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)"
+        >
+          {props.langs[1].selected ? "À propos" : "About"}
+        </AniLink>
       </Modal>
     </>
   )
@@ -81,12 +104,12 @@ const MainHeader = styled.header`
       &:before {
         width: 75%;
         top: 6px;
-        content: '';
+        content: "";
       }
       &:after {
         width: 100%;
         bottom: 6px;
-        content: '';
+        content: "";
       }
     }
     span,
@@ -97,10 +120,10 @@ const MainHeader = styled.header`
       height: 1px;
       right: 0;
       background: #fff;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
     &.active span {
-      background: rgba(0, 0, 0, .0);
+      background: rgba(0, 0, 0, 0);
       &:before {
         width: 100%;
         top: 0px;
