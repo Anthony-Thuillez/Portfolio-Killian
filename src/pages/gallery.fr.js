@@ -10,6 +10,13 @@ import KaiserVideo from "../images/kaiser.mp4"
 import KarenVideo from "../images/karen.mp4"
 import MarineVideo from "../images/marine.mp4"
 import TravisVideo from "../images/travis.mp4"
+import ShoppingVideo from "../images/shopping.mp4"
+import SkinsVideo from "../images/skins.mp4"
+import NounoursVideo from "../images/nounours.mp4"
+import KanKanVideo from "../images/kankan.mp4"
+import BaapVideo from "../images/baap.mp4"
+import VoltageVideo from "../images/voltage.mp4"
+import DilemmaVideo from "../images/dilemma.mp4"
 
 const GalleryPage = props => {
   const data = useStaticQuery(graphql`
@@ -244,6 +251,61 @@ const GalleryPage = props => {
             data-sal-easing="ease-out-cubic"
           >
             <video autoPlay loop muted>
+              <source src={BaapVideo} type="video/mp4" />
+            </video>
+          </div>
+          <div
+            className="image-container"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="50"
+            data-sal-easing="ease-out-cubic"
+          >
+            <video autoPlay loop muted>
+              <source src={ShoppingVideo} type="video/mp4" />
+            </video>
+          </div>
+          <div
+            className="image-container"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="50"
+            data-sal-easing="ease-out-cubic"
+          >
+            <video autoPlay loop muted>
+              <source src={SkinsVideo} type="video/mp4" />
+            </video>
+          </div>
+          <div
+            className="image-container"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="50"
+            data-sal-easing="ease-out-cubic"
+          >
+            <video autoPlay loop muted>
+              <source src={NounoursVideo} type="video/mp4" />
+            </video>
+          </div>
+          <div
+            className="image-container"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="50"
+            data-sal-easing="ease-out-cubic"
+          >
+            <video autoPlay loop muted>
+              <source src={KanKanVideo} type="video/mp4" />
+            </video>
+          </div>
+          <div
+            className="image-container"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="50"
+            data-sal-easing="ease-out-cubic"
+          >
+            <video autoPlay loop muted>
               <source src={KaiserVideo} type="video/mp4" />
             </video>
           </div>
@@ -274,6 +336,28 @@ const GalleryPage = props => {
           })}
         </div>
         <div className="column">
+          <div
+            className="image-container"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="50"
+            data-sal-easing="ease-out-cubic"
+          >
+            <video autoPlay loop muted>
+              <source src={VoltageVideo} type="video/mp4" />
+            </video>
+          </div>
+          <div
+            className="image-container"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="50"
+            data-sal-easing="ease-out-cubic"
+          >
+            <video autoPlay loop muted>
+              <source src={DilemmaVideo} type="video/mp4" />
+            </video>
+          </div>
           <div
             className="image-container"
             data-sal="slide-up"
